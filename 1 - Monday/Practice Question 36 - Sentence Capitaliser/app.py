@@ -1,9 +1,7 @@
 import re
 
 
-def main():
-    paragraph = input("Enter some text: ")
-
+def capitaliseParagraph(paragraph: str) -> str:
     # Split the paragraph into a list of sentences
     # By using a regex capturing group (brackets), we can keep the punctuation
     sentences = re.split(r"([.!?])", paragraph)
@@ -17,7 +15,13 @@ def main():
     # Join the sentences back together
     caps_paragraph = "".join(sentences)
 
-    print(caps_paragraph)
+    return caps_paragraph
+
+
+def main():
+    paragraph = input("Enter some text: ")
+
+    print(capitaliseParagraph(paragraph))
 
 
 if __name__ == "__main__":
